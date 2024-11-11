@@ -1,0 +1,7 @@
+.cardList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding: 1.875rem;
+}

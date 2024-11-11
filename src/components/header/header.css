@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .4rem;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 1.7rem;
+}
+
+.menu__item {
+    display: flex;
+    align-items: center;
+    gap: .625rem;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.menu__item:visited {
+    color: var(--black);
+}
+
+.menu__counter {
+    border: solid 1px var(--black);
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 32px;
+    padding: 0 12px;
+}

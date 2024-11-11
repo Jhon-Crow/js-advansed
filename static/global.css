@@ -1,0 +1,21 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--black);
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+:root {
+    --black: #121212;
+    --white: #fafafa;
+}
+
+#root {
+    width: 90vw;
+    height: 80vh;
+    padding: 34px 29px;
+}
