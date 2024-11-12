@@ -8,6 +8,16 @@ export class Card extends TagComponent {
         this.render();
     }
 
+    onClickFavoritsHandler(existInFavorites) {
+        !existInFavorites
+            ? this.appState.favorites.push(this.cardState)
+            : this.appState.favorites.splice(
+                this.appState.favorites.findIndex(
+                    b => b.key == this.cardState.key
+                ), 1
+            )
+    }
+
     render() {
         const existInFavorites = this.appState.favorites.find(
             b => b.key == this.cardState.key
@@ -38,6 +48,8 @@ export class Card extends TagComponent {
             `
 
         super.render('card', innerHtml);
+        const button = this.el.querySelector('.button__add');
+        button.addEventListener('click', this.onClickFavoritsHandler.bind(this, existInFavorites));
         return this.el;
     }
 }
