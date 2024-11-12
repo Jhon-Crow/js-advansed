@@ -1,4 +1,5 @@
 import {Header} from "../components/header/header.js";
+import onChange from "on-change";
 
 export class AbstractView {
     constructor(appState) {
@@ -21,7 +22,7 @@ export class AbstractView {
         this.app.prepend(header);
     }
 
-    destroy() {
-        return;
+    destroy(...args) {
+        args.forEach(a => onChange.unsubscribe(a));
     }
 }

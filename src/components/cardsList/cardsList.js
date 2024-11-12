@@ -9,7 +9,7 @@ export class CardsList extends TagComponent {
         this.render();
     }
 
-    render() {
+    render(bookList, loadedHeaderTemplate) {
         let innerHtml;
         if (this.state.loading){
             innerHtml = `
@@ -17,13 +17,16 @@ export class CardsList extends TagComponent {
         `;
         } else {
             innerHtml = `
-            <h1>Найдено ${this.state.numFound} книг</h1>
+            <h1>${loadedHeaderTemplate}</h1>
             `
         }
         super.render('cardList', innerHtml);
-        for (const card of this.state.list) {
-            this.el.append(new Card(card, this.appState).render())
+        const cardGrid = document.createElement('div');
+        cardGrid.classList.add('cardGrid');
+        if (bookList) for (const card of bookList) {
+           cardGrid.append(new Card(card, this.appState).render())
         }
+        this.el.append(cardGrid);
         return this.el;
     }
 }

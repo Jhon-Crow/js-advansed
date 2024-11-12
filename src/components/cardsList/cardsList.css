@@ -5,5 +5,10 @@
     justify-content: center;
     font-size: 16px;
     padding: 1.875rem;
-    /*flex-wrap: wrap;*/
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.875rem;
 }

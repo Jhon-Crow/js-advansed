@@ -46,7 +46,8 @@ export class MainView extends AbstractView {
     }
 
     renderCardsList() {
-        const list = new CardsList(this.state, this.appState).render();
+        const list = new CardsList(this.state, this.appState).render(this.state.list,
+            `Найдено ${this.state.numFound} книг`);
         this.app.append(list);
     }
 
@@ -58,4 +59,7 @@ export class MainView extends AbstractView {
         this.renderCardsList();
     }
 
+    destroy() {
+        super.destroy(this.appState, this.state);
+    }
 }
