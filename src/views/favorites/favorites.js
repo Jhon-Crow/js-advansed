@@ -14,10 +14,6 @@ export class FavoritesView extends AbstractView {
         this.setTitle('Избранные');
     }
 
-    appStateHook(path) {
-        if (path === 'favorites') this.render();
-    }
-
     renderCardsList() {
         const list = new CardsList(this.state, this.appState).render(this.appState.favorites,
             `В избранном ${this.appState.favorites.length} книг`);
@@ -25,9 +21,13 @@ export class FavoritesView extends AbstractView {
     }
 
     render() {
-        const main = super.render('div');
-        this.app.append(main);
+        const favorites = super.render('div');
+        this.app.append(favorites);
         this.renderHeader();
         this.renderCardsList();
+    }
+
+    destroy() {
+        super.destroy(this.appState);
     }
 }

@@ -20,10 +20,6 @@ export class MainView extends AbstractView {
         this.setTitle('Поиск книг');
     }
 
-    appStateHook(path) {
-        if (path === 'favorites') this.render();
-    }
-
     async stateHook(path) {
         if (path === 'searchQuery' && !this.state.loading) {
             this.state.loading = true;

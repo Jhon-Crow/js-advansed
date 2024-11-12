@@ -11,6 +11,10 @@ export class AbstractView {
         document.title = title;
     }
 
+    appStateHook(path) {
+        if (path === 'favorites') this.render();
+    }
+
     render(tagName) {
         const main = document.createElement(tagName);
         this.app.innerHTML = '';
@@ -23,6 +27,6 @@ export class AbstractView {
     }
 
     destroy(...args) {
-        args.forEach(a => onChange.unsubscribe(a));
+        args.forEach(arg => onChange.unsubscribe(arg));
     }
 }

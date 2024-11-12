@@ -9,9 +9,9 @@ export class Header extends TagComponent {
 
     render() {
         const innerHtml = `
-            <div>
+            <a href="#">
                 <img src="/static/logo.svg" alt="logo"/>                
-            </div>
+            </a>
             <div class="menu">
                 <a href="#" class="menu__item">
                     <img src="/static/search.svg" alt="search"/>  
